@@ -1,0 +1,26 @@
+<div class="img">dd</div>
+<div class="container">
+
+  <div class="col-12 search opacity d-flex justify-content-center">
+    <form  action="">
+      <div>
+        <h1>We are the expert pilots</h1>
+        <mat-form-field>
+          <input required matInput #date name="date" [matDatepicker]="picker" [(ngModel)]="pickerdate" placeholder="Elige una fecha">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input required matInput #name name="origen" type="text" placeholder="Desde" [(ngModel)]="origen">
+        </mat-form-field>
+        <mat-form-field>
+          <input required matInput name="destino" type="text" placeholder="Hasta" [(ngModel)]="destino">
+        </mat-form-field>
+        <a routerLink="/vuelos" (click)="buscar()" class="col-sm-12 col-md-1" href="#" mat-raised-button color="primary">Buscar</a>
+        
+      </div>
+    </form>
+  </div>
+</div>
+
+
