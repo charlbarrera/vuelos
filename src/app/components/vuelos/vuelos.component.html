@@ -3,7 +3,7 @@
     <mat-card-title>{{info.origen}} - {{info.destino}}</mat-card-title>
     <mat-card-subtitle>${{info.totalPrice}}.000</mat-card-subtitle>
     <mat-card-actions>
-        <button class="bf" mat-raised-button  color="warn"> Reservar </button>
+        <button class="bf" (click)="openReserve(info)" mat-raised-button  color="warn"> Reservar </button>
     </mat-card-actions>
     <mat-card-content>
       {{info.date.getDate()}} / {{info.date.getMonth()+1}} / {{info.date.getFullYear()}} 

@@ -22,7 +22,7 @@ export class VuelosService {
     {date: data.date, origen: data.origen,
         destino: data.destino, totalPrice: total, horario: '4:00 pm'},
     {date: data.date, origen: data.origen,
-      destino: data.destino, totalPrice: total, horario: '4:00 pm'}
+      destino: data.destino, totalPrice: total + 5, horario: '4:00 pm'}
     ];
     this.$subject.next([
           {date: data.date, origen: data.origen,
@@ -30,7 +30,7 @@ export class VuelosService {
          {date: data.date, origen: data.origen,
              destino: data.destino, totalPrice: total, horario: '4:00 pm'},
          {date: data.date, origen: data.origen,
-           destino: data.destino, totalPrice: total, horario: '4:00 pm'}
+           destino: data.destino, totalPrice: total + 5, horario: '5:00 pm'}
         ]);
   }
 
