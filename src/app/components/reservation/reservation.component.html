@@ -1,16 +1,32 @@
 <mat-vertical-stepper>
   <mat-step>
-    {{data.origen}}
+    <ng-template matStepLabel>Información del vuelo</ng-template>
+    <h2>{{data.origen}} - {{data.destino}}</h2>
+    <p>${{data.totalPrice}}.000</p>
+    <p>{{data.date.getDate()}}/{{data.date.getMonth()}}/{{data.date.getFullYear()}}</p>
+    <p>{{data.horario}}</p>
   </mat-step>
   <mat-step [stepControl]="firstGroupControl">
     <form action="" [formGroup]="firstGroupControl">
       <ng-template matStepLabel>Ingresa tus datos</ng-template>
       <mat-form-field>
-        <input matInput type="text" placeholder="Ingresa tu nombre">
+        <input matInput type="text" placeholder="Ingresa tu nombre" 
+                        [(ngModel)]="dataReservation.name" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput type="number" placeholder="Ingresa tu cedula"
+                        [(ngModel)]="dataReservation.cedula" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput [matDatepicker]="picker" type="text" placeholder="Fecha de nacimiento"
+                        [(ngModel)]="dataReservation.dateBorn" [ngModelOptions]="{standalone: true}">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </form>
   </mat-step>
   <mat-step>
+    <ng-template matStepLabel>Confirma tu reserva</ng-template>
     <p>Ten en cuenta que si reservas este vuelo, deberás esperar 24 hs para reservar el proximo</p>
     <button mat-raised-button (click)="reservar()">Reservar</button>
   </mat-step>

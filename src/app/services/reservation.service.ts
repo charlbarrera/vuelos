@@ -11,14 +11,14 @@ export class ReservationService {
 
    baseUrl = 'http://localhost:3000';
   private basePost = 'http://localhost:3000/create';
-  private headers = new HttpHeaders().set('content-type', 'x-www-form-urlencoded');
+  private headers = new HttpHeaders().set('content-type', 'application/json');
   constructor(private http: HttpClient) { }
 
   getReservation() {
     return this.http.get(this.baseUrl + '/list', {headers: this.headers});
   }
 
-  createReservation(data: Data) {
+  createReservation(data) {
    return this.http.post(this.basePost, data , {headers: this.headers});
   }
 }

@@ -16,8 +16,7 @@ export class Data {
 export class ReservationComponent implements OnInit {
 
   firstGroupControl: FormGroup;
-  dataReservation: Data = {name: 'hp2'};
-  dataUser = {name: 'charl'};
+  dataReservation = {reservation: this.data};
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -44,6 +43,7 @@ export class ReservationComponent implements OnInit {
     this._reservationService.createReservation(this.dataReservation).subscribe(
       data => console.log(data)
     );
+    alert('vuelo reservado con exito!');
   }
 
 }
